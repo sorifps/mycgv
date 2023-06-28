@@ -1,0 +1,542 @@
+/*****************************
+	commons style sheet
+******************************/
+* {
+	padding:0px; margin:0px;
+	font-family:"�������";
+}
+.header_menu, .section1_d1, .section2, .section3, .footer_menu
+	,section.login, section.join, section.mypage, section.notice
+	,section.board, section.admin {
+	width:1000px; margin:auto;
+	/* border:1px solid blue; */
+}
+section.login form[name='loginForm'], section.join form[name='joinForm']
+, section.mypage > div, section.notice table, section.board table
+, section.admin > div {
+	/* border:1px solid red; */
+	width:70%;
+	margin:auto;
+}
+.title { /* h1 ���� �±�  ��Ÿ�� */
+	border-left:15px solid #333;
+	border-bottom:1px solid #333;
+	width:30%;
+	font-size:25pt;
+	padding:5px 0px 5px 20px;
+	margin:30px 0 30px 100px;
+	font-style:italic;	
+}
+.btn_style {	/* ��ư ���� ��Ÿ�� */
+	width:130px;
+	padding:7px 0;
+	background:tomato;
+	color:white;
+	font-size:10pt;
+	font-weight:700;
+	border:1px solid white;
+	outline:1px solid red;
+	cursor:pointer;
+}
+.btn_style2 {	/* ȸ������-�ߺ�üũ, �ּ�ã�� ��ư ��Ÿ�� */
+	width:80px;
+	padding:9px 0;
+	background:mediumseagreen;
+	color:white;
+	font-size:9pt;
+	font-weight:700;
+	border:1px solid white;
+	border-radius:4px;
+	margin-left:5px;
+	cursor:pointer;
+}
+
+
+/*****************************
+	Header style sheet
+******************************/
+header {
+	background-image: url(http://localhost:9000/mycgv_jsp/images/bg_header.gif);
+	height:149px;
+	/* position: sticky; top: 0; */
+}
+.header_menu > nav > ul {
+	padding-left: 400px;
+	padding-top: 10px;
+	width: 100%; height: 30px;
+}
+.header_menu > nav.nav1 > ul > li > a {
+	border-right: 1px solid DimGrey;
+	display: block;
+	text-decoration: none;
+	color: DimGrey;
+	width: 70px;
+	font-size: 12px;
+	font-weight:700;
+	text-align: center;
+}
+.header_menu > nav.nav1 > ul > li:last-child > a {
+	border-right: none;
+	color: red;
+}
+.header_menu > nav.nav1 > ul > li {
+	float: left;
+	list-style-type: none;
+}
+.header_menu > div {
+	clear: both;
+	height:100px;
+	position: relative;
+}
+.header_menu > div > a {
+	position:absolute;
+	top:20px;
+	left:30px;
+}
+.header_menu > div > div {
+	width: 400px;
+	position: absolute;
+	left: 320px;
+	top: 17px;
+	text-align:center;			
+}
+.header_menu > div > div  ul {
+	list-style-type: none;
+	margin:0px; padding:0px;
+	text-align:center;
+} 
+.header_menu > div > div  ul li{
+	list-style-type: none;
+	float:left;
+} 
+.header_menu > div > div  ul li:first-child{
+	padding-left:3px;
+} 
+.header_menu > div > div  ul li a{
+	display:block;
+	text-decoration:none;
+	color:#555;
+	font-size:14pt;
+	font-weight:bold;
+	padding-top:3px;
+	margin:0 20px;
+}
+
+/*****************************
+	Footer style sheet
+******************************/
+.footer_bg {	
+	text-align:center;
+	background:rgb(254,218,152);
+	margin-top:50px;	
+}
+.footer_bg > img {
+	margin-top:-58px;
+}
+.footer_menu ul {
+	list-style-type:none;
+	margin:0px; padding:0px;
+	overflow:hidden;
+	border-bottom:1px solid lightgray;
+}
+.footer_menu ul > li {
+	float:left;
+}
+.footer_menu ul > li:last-child {
+	float:right;
+}
+.footer_menu ul > li > a {
+	display:block;
+	text-decoration:none;
+	padding:30px 32px 30px 2px;
+	font-size:10pt;
+	color:#777;
+	font-weight:700;
+}
+.footer_menu ul > li:last-child > a {
+	padding:30px 0px 30px 2px;
+}
+.footer_menu ul > li:nth-child(6) > a {
+	color:black;
+	text-decoration:underline;
+}
+.footer_menu ul > li > a:hover {
+	text-decoration:underline;
+} 
+.footer_menu > div {
+	margin:25px 0px 60px 0;
+	/* border:2px solid red; */
+}
+.footer_menu > div > p {	
+	font-size:13px;
+	color:#777;
+	padding:3px 0;
+}
+/* footer { 
+	border:2px solid red;
+	height:500px;
+} */
+
+/*****************************
+	Index-Content style sheet
+******************************/
+.section1 {
+	background-image:url("http://localhost:9000/mycgv_jsp/images/carousel_bg.png");
+}
+.section1_d1, .section2, .section3 {
+	text-align:center;
+	/* border:1px solid blue; */
+}
+.section2 div:first-child, .section3 div:first-child {			
+	padding:20px 0px;
+}
+.section2 div:nth-child(2) {			
+	/* border:2px solid green; */
+	/* display:inline-block; */
+	float:left;
+}
+.section2 > img {
+	/* border:2px solid green; */
+	float:right;
+	width:265px; height:400px;
+}
+.section3 {			
+	clear:both;
+}
+.section3 > div:nth-child(2) >img:first-child ,
+ .section3 > div:last-child > img:first-child {			
+	float:left;
+}  
+.section3 > div:nth-child(2) >img:last-child ,
+ .section3 > div:last-child > img:last-child {			
+	float:right;
+}
+.section3 > div:nth-child(2) >img:nth-child(2)
+	, .section3 > div:nth-child(2) >img:nth-child(3){			
+	margin:0px 3px;	
+}
+.section3 > div:nth-child(2){
+	border-bottom:3px solid #555;
+	padding-bottom:25px;			
+}
+.section3 > div:nth-child(3){
+	padding-top:25px;
+}
+.section3 > div:nth-child(3) img:first-child,
+.section3 > div:nth-child(3) img:last-child {
+	border:7px double black;
+	/* outline:3px double black; */
+}
+
+/*****************************
+	Login Form style sheet
+******************************/
+section.login form ul {
+	/* border:1px solid blue; */
+	list-style-type:none;
+	margin:0px; padding:0px;
+}
+section.login form ul li { clear:left; }
+section.login form ul li > label {
+	/* border:1px solid blue; */
+	display:inline-block;
+	width:160px;
+	padding:10px 0;
+	background:#ddd;
+	color:black;
+	border-radius:4px;
+	font-size:10pt;
+	font-weight:700;
+	float:left;
+	text-align:center;
+}
+section.login form ul li > input {
+	width:50%;
+	padding:9px 10px;
+	border-radius:4px;
+	border:1px solid #ddd;
+	margin:0 0 10px 10px;
+	font-size:10pt;
+}
+section.login form ul li:nth-child(3) {
+	padding:20px 0 0 170px;
+} 
+section.login form ul li:nth-child(3) > button:first-child {
+	margin-right:10px;
+} 
+section.login form ul li:last-child a {	
+	/* text-decoration:none; */
+	font-size:10pt;
+	font-weight:700;
+	color:#555;
+}
+section.login form ul li:last-child {
+	padding:20px 150px 50px 0;
+	text-align:right;
+}
+section.login form ul li:last-child > span:first-child{
+	margin-right:20px;
+}
+
+/*****************************
+	Join Form style sheet
+******************************/
+section.join form ul {
+	/* border:1px solid blue; */
+	font-size:10pt;
+	list-style-type:none;
+}
+section.join form ul li {
+	clear:left;
+}
+section.join form ul li > label {
+	display:inline-block;
+	width:150px;
+	padding:10px 0;
+	background:#ddd;
+	color:black;
+	border-radius:4px;
+	font-size:10pt;
+	font-weight:700;
+	float:left;
+	text-align:center;
+	margin:0 10px 5px 0;
+}
+.input1 {
+	width:40%;	
+	padding:8px 20px;
+	border:1px solid #ddd;
+	border-radius:4px;
+}
+input[name='email1'], input[name='email2'] {
+	width:17%;
+	padding:8px 20px;
+	border:1px solid #ddd;
+	border-radius:4px;
+}
+input[name='email2'] +select, select[name='phone1'] {
+	/* border:1px solid red; */
+	width:80px;
+	padding:8px 4px;
+	font-size:9pt;
+	border:1px solid lightgray;
+	border-radius:4px;
+	margin-left:5px;
+}
+input[name='phone2'], input[name='phone3'] {
+	width:80px;
+	border:1px solid #ddd;
+	border-radius:4px;
+	padding:8px 4px;
+	text-align:center;
+}
+textarea[name='intro'] {
+	border:1px solid #ddd;
+	border-radius:4px;
+	width:60%;
+	height:100px;
+	font-size:10pt;
+	padding:8px 15px;
+}
+input[type='radio'], input[type='radio'] +span,
+ input[type='checkbox'], input[type='checkbox'] +span {
+	/* border:1px solid red; */
+	font-size:9pt;
+	margin-left:5px;
+	padding:8px 4px;
+	vertical-align:middle;
+}
+form[name='joinForm'] ul li:last-child {
+	/* border:1px solid red; */
+	text-align:center;
+	padding:20px 0;
+}
+form[name='joinForm'] ul li:last-child button:first-child{
+	margin-right:10px;
+}
+form[name='joinForm'] ul #cmsg {
+	/* border:1px solid red;  */
+	display:none;
+	margin:7px 0px 7px 170px; 
+}
+
+
+
+/*****************************
+	Mypage style sheet
+******************************/
+section.mypage div {
+	height:300px;
+	text-align:center;
+	padding-top:30px;
+}
+section.mypage article {
+	border:1px solid #ddd;
+	border-radius:5px;
+	width:200px;
+	padding:30px 0;
+	text-align:center;
+	font-size:11pt;
+	font-weight:700;
+	background:tomato;
+	color:white;
+	display:inline-block;
+	cursor:pointer;
+}
+section.mypage article:first-child {
+	background:mediumseagreen;
+	margin-right:10px;
+}
+
+/*****************************************
+	Notice, Board commons style sheet
+*******************************************/
+section.notice table, section.notice th, section.notice td,
+section.board table, section.board th, section.board td {
+	border:1px solid #777;
+	border-collapse:collapse;
+	text-align:center;
+	font-size:10pt;
+	color:#333;
+}
+section.notice th, section.notice td,
+section.board th, section.board td {
+	padding:6px 0;
+}
+section.notice tr > td:nth-child(2),
+section.board tr > td:nth-child(2) {
+	text-align:left;
+	text-indent:20px;
+}
+section.notice tr > td:nth-child(2) > a,
+section.board tr > td:nth-child(2) > a{
+	text-decoration:none;
+}
+section.notice tr > td:nth-child(2) > a:hover,
+section.board tr > td:nth-child(2) > a:hover{
+	text-decoration:underline;
+}
+section.notice tr:first-child,
+section.board tr:nth-child(2) {
+	background:#ddd;
+	color:#333;	
+}
+section.notice tr:last-child td,
+section.board tr:last-child td {
+	border:1px solid white;
+	padding-bottom:40px;
+}
+
+/*****************************************
+	Notice style sheet
+*******************************************/
+section.notice table.notice_content th {
+	background:#ddd;
+	color:#333;	
+	width:140px;
+	padding:10px 0;
+}
+section.notice table.notice_content tr:first-child td {
+	background:white;
+}
+section.notice table.notice_content tr:nth-child(2) td,
+section.board table.board_content tr:nth-child(2) td {
+	padding-left:20px;
+	text-indent:0px;
+}
+section.notice table.notice_content tr:last-child td {
+	padding-top:30px;
+}
+section.notice table.notice_content tr:last-child td button:first-child {
+	margin-right:10px;
+}
+
+/*****************************************
+	Board style sheet
+*******************************************/
+section.board table.board_list tr:first-child td {
+	border:1px solid white;	
+	border-bottom:1px solid #777;
+	text-align:right;
+}
+section.board table.board_list tr:first-child td button{
+	margin:0 20px 5px 0;
+	width:70px;
+	padding:7px 0;
+}
+section.board form[name='writeForm'] table button,
+section.board table.board_content button,
+section.board form[name='updateForm'] table button,
+section.board form[name='deleteForm'] table button {
+	width:100px;
+	margin:40px 5px;
+}
+section.board form[name='writeForm'] table th,
+section.board table.board_content th,
+section.board form[name='updateForm'] table th{
+	background:#ddd;
+	color:#333;	
+	width:140px;
+}
+section.board form[name='writeForm'] table td,
+section.board table.board_content td,
+section.board form[name='updateForm'] table td{
+	background:white;
+}
+section.board form[name='writeForm'] table input,
+section.board form[name='writeForm'] table textarea,
+section.board form[name='updateForm'] table input,
+section.board form[name='updateForm'] table textarea {
+	width:80%;	
+	padding:6px 20px;
+	border:1px solid #ddd;
+	border-radius:4px;
+}
+section.board form[name='writeForm'] table,
+section.board form[name='updateForm'] table {
+	width:65%;
+}
+section.board form[name='writeForm'] table textarea,
+section.board form[name='updateForm'] table textarea {
+	height:140px;
+}
+section.board form[name='deleteForm'] img {
+	width:30%;
+} 
+section.board form[name='deleteForm'] table td {
+	border:1px solid white;
+	background:white;
+	font-size:13pt;
+	font-weight:700;
+}
+
+/*****************************************
+	Board style sheet
+*******************************************/
+section.admin div {
+	height:300px;
+	text-align:center;
+	padding-top:30px;
+}
+section.admin div article {	
+	padding:10px;
+}
+
+div.content section.board form #update_file {
+	position:relative;
+	left:118px; top:-35px;
+	width:100px;
+	padding:6px;
+	display:inline-block;
+	background:white;
+}
+
+
+
+
+
+
+
+
+
+

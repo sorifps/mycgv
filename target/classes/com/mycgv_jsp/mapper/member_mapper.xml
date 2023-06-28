@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="mapper.member">
+
+	<select id="login" parameterType="com.mycgv_jsp.vo.MemberVo" resultType="int">
+		SELECT COUNT(*) FROM MYCGV_MEMBER WHERE ID=#{id} AND PASS=#{pass}
+	</select>
+
+	<select id="join" parameterType="com.mycgv_jsp.vo.MemberVo" resultType="int">
+		INSERT INTO 
+		MYCGV_MEMBER(ID,PASS,NAME,GENDER,EMAIL,ADDR,TEL,PNUMBER,HOBBYLIST,INTRO,MDATE)
+		 VALUES(#{id},#{pass},#{name},#{gender},#{email},#{addr},#{tel},#{pnumber},#{hobbyList},#{intro},SYSDATE)
+	</select>
+
+	<select id="list" parameterType="map" resultType="com.mycgv_jsp.vo.MemberVo">
+		SELECT RNO,ID,NAME, MDATE,GRADE FROM
+			(SELECT ROWNUM RNO,ID,NAME,TO_CHAR(MDATE,'YYYY-MM-DD') MDATE,GRADE FROM
+				(SELECT id,name,mdate,grade FROM MYCGV_MEMBER ORDER BY MDATE DESC)) WHERE RNO BETWEEN #{startCount} AND #{endCount}
+	</select>
+
+	<select id="idCheck" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM MYCGV_MEMBER WHERE ID =#{id}
+	</select>
+	
+	<select id="loginResult" parameterType="com.mycgv_jsp.vo.MemberVo" resultType="com.mycgv_jsp.vo.SessionVo">
+		SELECT COUNT(*) LOGINRESULT,NAME, ID FROM MYCGV_MEMBER WHERE ID=#{id} AND PASS=#{pass} GROUP BY NAME, ID
+	</select>
+</mapper>

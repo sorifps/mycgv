@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="mapper.notice">
+
+	<select id="count" resultType="int">
+		select count(*) from mycgv_board_notice
+	</select>
+	
+	<select id="list" parameterType="map" resultType="com.mycgv_jsp.vo.BoardNoticeVo">
+		SELECT RNO, BNID, BNTITLE, BNHITS, BNDATE FROM 
+			(SELECT ROWNUM RNO, BNID, BNTITLE, BNHITS, TO_CHAR(BNDATE,'YYYY-MM-DD') BNDATE
+			FROM(SELECT BNID, BNTITLE, BNHITS, BNDATE FROM MYCGV_BOARD_NOTICE ORDER BY BNDATE DESC)) WHERE RNO BETWEEN #{startCount} AND #{endCount}
+	</select>
+	
+	<select id="noticeUpdateHits" parameterType="String">
+		UPDATE MYCGV_BOARD_NOTICE SET BNHITS=BNHITS+1 WHERE BNID=#{bnid}
+	</select>
+	
+	<select id="content" parameterType="String" resultType="com.mycgv_jsp.vo.BoardNoticeVo">
+		SELECT BNTITLE, BNCONTENT, BNHITS, BNDATE, BNID FROM MYCGV_BOARD_NOTICE WHERE BNID=#{bnid}
+	</select>
+	
+	<update id="update" parameterType="com.mycgv_jsp.vo.BoardNoticeVo">
+		UPDATE MYCGV_BOARD_NOTICE SET BNTITLE=#{bntitle}, BNCONTENT=#{bncontent} WHERE BNID=#{bnid}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		DELETE FROM MYCGV_BOARD_NOTICE WHERE BNID=#{bnid}
+	</delete>
+	
+	<insert id="write" parameterType="com.mycgv_jsp.vo.BoardNoticeVo">
+		INSERT INTO MYCGV_BOARD_NOTICE(BNID, BNTITLE, BNCONTENT, BNHITS, BNDATE, nfile1, nsfile1, nfile2, nsfile2)
+			VALUES('b_'||LTRIM(TO_CHAR(SEQU_MYCGV_BOARD_NOTICE.NEXTVAL,'0000')),#{bntitle},#{bncontent},0,SYSDATE,#{nfile1},#{nsfile1},#{nfile2},#{nsfile2})
+	</insert>
+	
+	
+</mapper>
